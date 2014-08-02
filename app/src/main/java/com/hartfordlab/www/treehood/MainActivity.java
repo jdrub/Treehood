@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
     }
 
     public void login(View view){
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, StartActivity.class);
         String username = ((EditText)findViewById(R.id.username)).getText().toString();
         String password = ((EditText)findViewById(R.id.password)).getText().toString();
 

@@ -65,14 +65,16 @@
 
 
     <Button
+        android:gravity="center_horizontal|center_vertical"
+        android:textColor="#ffe7cb"
         android:background="@drawable/button_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
+        android:text="login"
         android:id="@+id/button"
         android:layout_below="@+id/password"
         android:layout_marginTop="40dp"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
         android:layout_alignRight="@+id/password"

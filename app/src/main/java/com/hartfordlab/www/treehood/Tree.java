@@ -26,6 +26,10 @@ public class Tree implements Serializable{
         score = 0;
     }
 
+    public Tree clone(){
+        return new Tree(name);
+    }
+
     public ArrayList<User> getUsers() {
         return users;
     }
@@ -81,8 +85,4 @@ public class Tree implements Serializable{
         this.score = score;
     }
 
-    public static Tree toTreeFromCsv(String input){
-        //TODO: implement this method
-        return null;
-    }
 }

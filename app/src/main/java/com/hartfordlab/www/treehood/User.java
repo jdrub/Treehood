@@ -30,6 +30,10 @@ public class User implements Serializable {
 
     }
 
+    public User clone(){
+        return new User(treeName, name, password, address, score, new ArrayList<Challenge>(challenges));
+    }
+
     public String getTreeName() {
         return treeName;
     }
@@ -62,12 +66,11 @@ public class User implements Serializable {
         score += toAdd;
     }
 
-
-
-    public static User toUserFromCsv(String input){
-        //TODO: implement this method
-        return null;
+    public ArrayList<Challenge> returnChallenges(){
+        return challenges;
     }
+
+
 
 
 

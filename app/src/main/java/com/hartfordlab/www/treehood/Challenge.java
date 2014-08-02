@@ -24,6 +24,9 @@ public class Challenge implements Serializable {
         description = descriptionIn;
     }
 
+    public Challenge clone(){
+        return new Challenge(name, progress, description);
+    }
 
 
     public String getName() {
@@ -55,9 +58,5 @@ public class Challenge implements Serializable {
         return name + ", " + progress + ", " + description;
     }
 
-    public static Challenge toChallengeFromCsv (String input){
-        //TODO: implement this method
-        return null;
-    }
 
 }

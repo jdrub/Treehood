@@ -18,7 +18,7 @@
         android:id="@+id/title"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="70dp"
+        android:textSize="70sp"
         android:textColor="#259900"
      />sdk
 
@@ -32,36 +32,40 @@
         />
 
      <EditText
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="47dp"
         android:id="@+id/username"
-        android:layout_below="@+id/tree"
-        android:layout_marginTop="70dp"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:background="@drawable/custom_bg"
-        android:gravity="center_horizontal|center_vertical"
+        android:background="@drawable/edit_text_username"
+        android:gravity="center_vertical"
         android:singleLine="true"
-        android:textSize="22dp"
+        android:textSize="22sp"
         android:hint="username"
         android:shape="rectangle"
-        />
+        android:textColorHint="@color/HintColor"
+        android:layout_below="@+id/tree"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title" />
 
     <EditText
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="47dp"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/password"
         android:layout_below="@+id/username"
-        android:layout_marginTop="2dp"
-        android:background="@drawable/custom_bg"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/edit_text_password"
+        android:textColorHint="@color/HintColor"
         android:singleLine="true"
-        android:gravity="center_horizontal|center_vertical"
-        android:textSize="22dp"
-        android:hint="password"/>
+        android:gravity="center_vertical"
+        android:textSize="22sp"
+        android:hint="password"
+        android:layout_alignRight="@+id/username"
+        android:layout_alignEnd="@+id/username"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title" />
 
 
     <Button

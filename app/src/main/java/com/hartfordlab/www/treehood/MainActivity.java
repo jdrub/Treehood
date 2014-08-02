@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
         title.setTypeface(fontMusket);
         user.setTypeface(fontRobo);
         pass.setTypeface(fontRobo);
+
         getActionBar().hide();
 
 

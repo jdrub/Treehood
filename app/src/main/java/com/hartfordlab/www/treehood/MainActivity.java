@@ -1,17 +1,36 @@
 package com.hartfordlab.www.treehood;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+    ServerManager serverManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        serverManager = new ServerManager();
+    }
+
+    public void login(View view){
+        Intent intent = new Intent(this, HomeActivity.class);
+        String username = ((EditText)findViewById(R.id.username)).getText().toString();
+        String password = ((EditText)findViewById(R.id.password)).getText().toString();
+
+
+        User user = serverManager.login(username,password);
+
+
+        intent.putExtra("USER",user);
+        startActivity(intent);
     }
 
 

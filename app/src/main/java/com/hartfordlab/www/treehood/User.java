@@ -4,31 +4,38 @@ package com.hartfordlab.www.treehood;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class User implements Serializable {
     private static final long serialVersionUID = -1320487862009050313L;
-    private Tree tree; // the group/neighborhood that they live in
+    private String treeName; // the group/neighborhood that they live in
     private String name;
     private String address;
     private int score;
     private ArrayList<Challenge> challenges;
+    private String password;
 
-    public User(Tree treeIn, String nameIn, String addressIn, int scoreIn,
+    public User(String treeNameIn, String nameIn,String passwordIn, String addressIn, int scoreIn,
                 ArrayList<Challenge> challengesIn){
+        treeName = treeNameIn;
         name = nameIn;
         address = addressIn;
         score = scoreIn;
         challenges = challengesIn;
+        password = passwordIn;
+
     }
 
-    public Tree getTree() {
-        return tree;
+    public String getTreeName() {
+        return treeName;
     }
 
-    public void setTree(Tree tree) {
-        this.tree = tree;
+    public void setTreeName(String treeName) {
+        this.treeName = treeName;
     }
 
     public String getName() {
@@ -54,6 +61,15 @@ public class User implements Serializable {
     public void addToScore(int toAdd){
         score += toAdd;
     }
+
+
+
+    public static User toUserFromCsv(String input){
+        //TODO: implement this method
+        return null;
+    }
+
+
 
 
 

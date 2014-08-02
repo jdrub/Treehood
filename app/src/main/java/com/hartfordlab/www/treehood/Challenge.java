@@ -1,5 +1,8 @@
 package com.hartfordlab.www.treehood;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 
 public class Challenge implements Serializable {
@@ -20,6 +23,8 @@ public class Challenge implements Serializable {
         progress = progressIn;
         description = descriptionIn;
     }
+
+
 
     public String getName() {
         return name;
@@ -44,4 +49,15 @@ public class Challenge implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString(){
+        return name + ", " + progress + ", " + description;
+    }
+
+    public static Challenge toChallengeFromCsv (String input){
+        //TODO: implement this method
+        return null;
+    }
+
 }

@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         User user = serverManager.login(username,password);
+        System.out.println("j_: in MainActivity, username: " + user.getName());
 
 
         intent.putExtra("USER",user);

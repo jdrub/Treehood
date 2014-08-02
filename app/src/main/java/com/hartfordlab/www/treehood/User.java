@@ -17,7 +17,10 @@ public class User implements Serializable {
 
     public User(Tree treeIn, String nameIn, String addressIn, int scoreIn,
                 ArrayList<Challenge> challengesIn){
-        //TODO: actually create user
+        name = nameIn;
+        address = addressIn;
+        score = scoreIn;
+        challenges = challengesIn;
     }
 
     public Tree getTree() {

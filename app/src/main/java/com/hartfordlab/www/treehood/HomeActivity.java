@@ -92,7 +92,6 @@ public class HomeActivity extends ActionBarActivity
         TextView username = (TextView)findViewById(R.id.username);
         Intent i = getIntent();
         User user = (User)i.getSerializableExtra("USER");
-        username.setText(user.getName());
     }
 
     @Override

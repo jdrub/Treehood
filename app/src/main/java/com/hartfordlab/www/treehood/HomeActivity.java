@@ -25,14 +25,18 @@ import android.widget.Toast;
 
 import com.hartfordlab.www.treehood.R;
 
+import java.util.ArrayList;
+
 public class HomeActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    User user;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
+    private ArrayList<Fragment> fragments;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -44,41 +48,8 @@ public class HomeActivity extends ActionBarActivity
         setContentView(R.layout.activity_home);
         listView = (ListView) findViewById(R.id.list);
 
-        String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View"
-        };
+        fragments = new ArrayList<Fragment>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
-
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                // ListView Clicked item index
-                int itemPosition     = position;
-
-                // ListView Clicked item value
-                String  itemValue    = (String) listView.getItemAtPosition(position);
-
-                // Show Alert
-                Toast.makeText(getApplicationContext(),
-                        "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
-                        .show();
-
-            }
-
-        });
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -91,7 +62,7 @@ public class HomeActivity extends ActionBarActivity
 
         TextView username = (TextView)findViewById(R.id.username);
         Intent i = getIntent();
-        User user = (User)i.getSerializableExtra("USER");
+        this.user = (User)i.getSerializableExtra("USER");
     }
 
     @Override
@@ -106,10 +77,10 @@ public class HomeActivity extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = "Home";
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = "Create Challenge";
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);

@@ -103,11 +103,14 @@ import java.util.ArrayList;
 
             View myInflatedView = inflater.inflate(R.layout.afragment,container,false);
 
+
             final ArrayList<Challenge> challenges = dataManager.getChallenges();
             Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
 
             TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
             params.setMargins(22, 15, 22, 15); //left,top,right,bottom
+
+
 
             for(int j = 0; j < 2; j++) {
                 for (int i = 0; i < challenges.size(); i++) {
@@ -116,6 +119,7 @@ import java.util.ArrayList;
                     textView.setText(challenges.get(i).getName());
                     textView.setGravity(Gravity.CENTER_HORIZONTAL);
                     textView.setGravity(Gravity.CENTER_VERTICAL);
+                    textView.setWidth(500);
                     textView.setTextColor(Color.parseColor("#259900"));
                     textView.setBackgroundColor(Color.parseColor("#ffffff"));
                     textView.setTypeface(roboto);

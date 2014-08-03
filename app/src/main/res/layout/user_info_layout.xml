@@ -29,16 +29,16 @@
         android:layout_height="wrap_content"
         android:text="mytree"
         android:id="@+id/treename"
-        android:layout_below="@+id/score"
-        android:layout_alignRight="@+id/score"
-        android:layout_alignEnd="@+id/score"
+        android:layout_below="@+id/scorein"
+        android:layout_alignRight="@+id/scorein"
+        android:layout_alignEnd="@+id/scorein"
         android:layout_marginTop="44dp" />
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/score"
-        android:layout_alignRight="@+id/score"
-        android:layout_alignEnd="@+id/score"
+        android:layout_below="@+id/scorein"
+        android:layout_alignRight="@+id/scorein"
+        android:layout_alignEnd="@+id/scorein"
         android:layout_marginTop="44dp" >
 
         <LinearLayout

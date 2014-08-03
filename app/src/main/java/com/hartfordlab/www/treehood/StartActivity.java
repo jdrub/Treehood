@@ -27,12 +27,15 @@ import java.util.ArrayList;
  */
     public class StartActivity extends Activity {
         public static Context appContext;
-
+        User user;
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.main);
+
+            User user = (User)getIntent().getSerializableExtra("USER");
+
 
 //ActionBar gets initiated
             ActionBar actionbar = getActionBar();
@@ -45,9 +48,9 @@ import java.util.ArrayList;
             TextView t = (TextView) findViewById(R.id.standard_tabs);
             TextView t2 = (TextView) findViewById(R.id.standard_tabs2);
             TextView t3 = (TextView) findViewById(R.id.standard_tabs3);
-            t.setText("Testing");
-            t2.setText("Testing2");
-            t3.setText("Testing3");
+            t.setText("Test1");
+            t2.setText("Test2");
+            t3.setText("Test3");
 
             ActionBar.Tab PlayerTab = actionbar.newTab()
                     .setCustomView(t);
@@ -61,10 +64,18 @@ import java.util.ArrayList;
                     R.drawable.tab_bg));
 
 
+
 //create the two fragments we want to use for display content
             Fragment PlayerFragment = new AFragment();
+            Bundle args = new Bundle();
+            args.putSerializable("USER",user);
+            PlayerFragment.setArguments(args);
+
             Fragment StationsFragment = new BFragment();
+            StationsFragment.setArguments(args);
+
             Fragment ThirdFragment = new CFragment();
+            ThirdFragment.setArguments(args);
 
 //set the Tab listener. Now we can listen for clicks.
             PlayerTab.setTabListener(new MyTabsListener(PlayerFragment));
@@ -80,12 +91,15 @@ import java.util.ArrayList;
     public static class AFragment extends Fragment {
 
         DataManager dataManager;
+        User user;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             // Inflate the layout for this fragment
             dataManager = new DataManager();
             dataManager.generateData();
+
+            user = (User)getArguments().getSerializable("USER");
 
             View myInflatedView = inflater.inflate(R.layout.afragment,container,false);
 
@@ -118,6 +132,7 @@ import java.util.ArrayList;
                             Bundle args = new Bundle();
                             args.putSerializable("CHALLENGE",
                                     dataManager.getChallenge(textView.getText().toString()));
+                            args.putSerializable("USER",user);
 
                             newFragment.setArguments(args);
 
@@ -145,20 +160,27 @@ import java.util.ArrayList;
     }
 
     public static class BFragment extends Fragment {
-
+        User user;
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             // Inflate the layout for this fragment
+
+            user = (User)getArguments().getSerializable("USER");
+
             return inflater.inflate(R.layout.bfragment, container, false);
         }
 
     }
 
     public static class CFragment extends Fragment {
+        User user;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             // Inflate the layout for this fragment
+
+            user = (User)getArguments().getSerializable("USER");
+
             return inflater.inflate(R.layout.cfragment, container, false);
         }
 

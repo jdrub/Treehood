@@ -13,7 +13,6 @@ public class ServerManager {
 
     public User login(String username,String password){
         //TODO: pull user from a locally-stored queue, or return null if user doesn't exist
-        System.out.println("ok we're here..");
         String treeName = "Mill Creek";
         String address = "7405 Cliffbourne Ct.";
         int score = 2;

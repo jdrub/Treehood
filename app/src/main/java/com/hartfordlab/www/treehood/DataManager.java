@@ -68,4 +68,13 @@ public class DataManager {
         trees.add(knollwood);
 
     }
+
+    public Challenge getChallenge(String name){
+        for(int i = 0; i < challenges.size(); i++){
+            if(challenges.get(i).getName().equals(name))
+                return challenges.get(i);
+        }
+        return null;
+    }
+
 }

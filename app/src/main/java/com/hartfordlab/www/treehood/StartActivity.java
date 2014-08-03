@@ -105,10 +105,10 @@ import java.util.ArrayList;
 
 
             final ArrayList<Challenge> challenges = dataManager.getChallenges();
-            Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+            Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Black.ttf");
 
             TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
-            params.setMargins(22, 15, 22, 15); //left,top,right,bottom
+            params.setMargins(22, 0, 22, 25); //left,top,right,bottom
 
 
 
@@ -123,8 +123,7 @@ import java.util.ArrayList;
                     textView.setTextColor(Color.parseColor("#259900"));
                     textView.setBackgroundColor(Color.parseColor("#ffffff"));
                     textView.setTypeface(roboto);
-                    textView.setTextSize(24);
-                    //textView.setBackgroundResource(R.drawable.custom_bg);
+                    textView.setTextSize(20);
                     textView.setLayoutParams(params);
                     textView.setOnClickListener(new View.OnClickListener() {
                         @Override

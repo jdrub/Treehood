@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User implements Serializable {
+public class User implements Serializable,Comparable {
     private static final long serialVersionUID = -1320487862009050313L;
     private String treeName; // the group/neighborhood that they live in
     private String name;
@@ -86,7 +86,8 @@ public class User implements Serializable {
 
 
 
-
-
-
+    @Override
+    public int compareTo(Object another) {
+        return ((User)another).getScore() - this.getScore();
+    }
 }

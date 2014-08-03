@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by will on 8/2/14.
@@ -28,6 +29,7 @@ import java.util.ArrayList;
     public class StartActivity extends Activity {
         public static Context appContext;
         User user;
+
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,7 @@ import java.util.ArrayList;
 //create the two fragments we want to use for display content
             Fragment PlayerFragment = new AFragment();
             Bundle args = new Bundle();
-            args.putSerializable("USER",user);
+            args.putSerializable("USER", user);
             PlayerFragment.setArguments(args);
 
             Fragment StationsFragment = new BFragment();
@@ -196,11 +198,33 @@ import java.util.ArrayList;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
+            //TODO: pass in an already instantiated DataManager,
+            DataManager dataManager = new DataManager();
+            dataManager.generateData();
+
+            View myInflatedView = inflater.inflate(R.layout.cfragment, container, false);
 
             user = (User)getArguments().getSerializable("USER");
+            Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+            ArrayList<User> adjacentUsers = dataManager.getTree(user.getTreeName()).getUsers();
 
-            return inflater.inflate(R.layout.cfragment, container, false);
+            //sort users in my tree (adjacentUsers)
+            Collections.sort(adjacentUsers);
+
+            LinearLayout l = (LinearLayout)myInflatedView.findViewById(R.id.linear_layout_c);
+
+            for(User u: adjacentUsers){
+
+                System.out.println("j_: username: " + u.getName());
+                TextView textView = new TextView(container.getContext());
+                textView.setText(u.getName() + ": " + Integer.valueOf(u.getScore()));
+                textView.setTypeface(roboto);
+                textView.setTextSize(25);
+                l.addView(textView);
+
+            }
+
+            return myInflatedView;
         }
 
     }

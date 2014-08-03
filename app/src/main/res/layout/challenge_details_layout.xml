@@ -11,6 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="challenge title"
         android:id="@+id/title"
+        android:fontFamily="fonts/Roboto-Black.ttf"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 

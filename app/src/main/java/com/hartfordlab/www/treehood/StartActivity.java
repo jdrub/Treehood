@@ -48,9 +48,9 @@ import java.util.ArrayList;
             TextView t = (TextView) findViewById(R.id.standard_tabs);
             TextView t2 = (TextView) findViewById(R.id.standard_tabs2);
             TextView t3 = (TextView) findViewById(R.id.standard_tabs3);
-            t.setText("Test1");
-            t2.setText("Test2");
-            t3.setText("Test3");
+            t.setText("Challenges");
+            t2.setText("Me");
+            t3.setText("Ranking");
 
             ActionBar.Tab PlayerTab = actionbar.newTab()
                     .setCustomView(t);

@@ -185,17 +185,27 @@ import java.util.Collections;
             user = (User)getArguments().getSerializable("USER");
 
             View myInflatedView = inflater.inflate(R.layout.bfragment, container, false);
-            //Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+            Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
 
-            ((TextView)myInflatedView.findViewById(R.id.name)).setText(user.getName());
-            ((TextView)myInflatedView.findViewById(R.id.scorein)).setText((new Integer(user.getScore())).toString());
+            TextView t = ((TextView)myInflatedView.findViewById(R.id.name));
+            t.setTypeface(roboto);
+            t.setText(user.getName());
 
-            ((TextView)myInflatedView.findViewById(R.id.treename)).setText(user.getTreeName());
+
+            TextView t2 = ((TextView)myInflatedView.findViewById(R.id.scorein));
+            t2.setTypeface(roboto);
+            t2.setText((new Integer(user.getScore())).toString());
+
+            TextView t3 = ((TextView)myInflatedView.findViewById(R.id.treename));
+            t3.setTypeface(roboto);
+            t3.setText(user.getTreeName());
 
             for(Challenge c: user.getChallenges()){
                 LinearLayout l = (LinearLayout)myInflatedView.findViewById(R.id.challenges);
                 TextView textView = new TextView(container.getContext());
                 textView.setText(c.getName());
+                textView.setTypeface(roboto);
+                textView.setTextSize(15);
                 //TODO: add margins/padding
                 l.addView(textView);
             }

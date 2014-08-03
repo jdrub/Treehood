@@ -2,30 +2,37 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fontFamily="fonts/Roboto-Black.ttf">
 
     <TextView
+        android:fontFamily="fonts/Roboto-Black.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="myname"
+        android:textSize="20dp"
         android:id="@+id/name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp" />
+        android:layout_marginTop="70dp" />
 
     <TextView
+        android:fontFamily="fonts/Roboto-Bold.ttf"
         android:layout_width="390dp"
         android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:text="myscore"
         android:id="@+id/scorein"
+        android:textSize="70dp"
+        android:textColor="@color/green_green"
         android:layout_below="@+id/name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="52dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
+        android:fontFamily="fonts/Roboto-Black.ttf"
         android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,20 +42,26 @@
         android:layout_alignRight="@+id/scorein"
         android:layout_alignLeft="@+id/scorein"
         android:layout_alignEnd="@+id/scorein"
-        android:layout_marginTop="44dp" />
+        android:textSize="25dp"
+        android:layout_marginTop="10dp" />
     <ScrollView
+        android:textSize="25dp"
+        android:fontFamily="fonts/Roboto-Black.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/treename"
         android:layout_alignRight="@+id/treename"
         android:layout_alignLeft="@+id/treename"
-        android:layout_marginTop="44dp" >
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center_horizontal">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/challenges">
+            android:id="@+id/challenges"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
 
 
         </LinearLayout>

@@ -67,11 +67,18 @@ public class User implements Serializable {
     }
 
     public boolean comparePassword(String passwordIn){
+        System.out.println("j_: this.password: " + this.password);
         if(passwordIn.equals(this.password))
             return true;
         return false;
     }
 
+    public int getScore(){
+        return this.score;
+    }
+    public ArrayList<Challenge> getChallenges(){
+        return this.challenges;
+    }
     public ArrayList<Challenge> returnChallenges(){
         return challenges;
     }

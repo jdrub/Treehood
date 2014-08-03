@@ -1,7 +1,6 @@
 package com.hartfordlab.www.treehood;
 
 import java.util.ArrayList;
-import static android.support.v4.app.ActivityCompat.startActivity;
 
 public class ServerManager {
     //TODO: define private csv file here
@@ -14,7 +13,9 @@ public class ServerManager {
     public User login(String username,String password,DataManager dataManager){
 
         ArrayList<User> users = dataManager.getUsers();
+        System.out.println("j_: input: " + username + ", " + password);
         for(User u: users){
+            System.out.println("j_: comparing " + u.getName());
             if(u.getName().equals(username) && u.comparePassword(password)){
                 return u;
             }

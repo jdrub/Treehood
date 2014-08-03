@@ -71,6 +71,15 @@ public class DataManager {
 
     }
 
+    public Tree getTree(String name){
+        for(Tree t: trees){
+            if(t.getName().equals(name))
+                return t;
+        }
+        return null;
+    }
+
+
     public Challenge getChallenge(String name){
         for(int i = 0; i < challenges.size(); i++){
             if(challenges.get(i).getName().equals(name))

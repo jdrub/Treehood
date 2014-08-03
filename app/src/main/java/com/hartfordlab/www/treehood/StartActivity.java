@@ -47,12 +47,24 @@ import java.util.Collections;
             actionbar.setDisplayShowTitleEnabled(false);
 //initiating both tabs and set text to it.
 
+            TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+            params.setMargins(0, 4, 0, 0); //left,top,right,bottom
+
+
             TextView t = (TextView) findViewById(R.id.standard_tabs);
+            t.setTextSize(20);
+            t.setLayoutParams(params);
+
             TextView t2 = (TextView) findViewById(R.id.standard_tabs2);
+            t2.setTextSize(30);
             TextView t3 = (TextView) findViewById(R.id.standard_tabs3);
-            t.setText("Challenges");
+            t3.setTextSize(20);
+            t3.setLayoutParams(params);
+
+
+            t.setText("Challenge");
             t2.setText("Me");
-            t3.setText("Ranking");
+            t3.setText("Rank");
 
             ActionBar.Tab PlayerTab = actionbar.newTab()
                     .setCustomView(t);
@@ -222,14 +234,23 @@ import java.util.Collections;
             Collections.sort(adjacentUsers);
 
             LinearLayout l = (LinearLayout)myInflatedView.findViewById(R.id.linear_layout_c);
+            TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+            params.setMargins(22, 0, 22, 25); //left,top,right,bottom
 
             for(User u: adjacentUsers){
 
                 System.out.println("j_: username: " + u.getName());
-                TextView textView = new TextView(container.getContext());
+                Button textView = new Button(container.getContext());
                 textView.setText(u.getName() + ": " + Integer.valueOf(u.getScore()));
+                textView.setGravity(Gravity.CENTER_HORIZONTAL);
+                textView.setGravity(Gravity.CENTER_VERTICAL);
                 textView.setTypeface(roboto);
-                textView.setTextSize(25);
+                textView.setWidth(500);
+                textView.setTextColor(Color.parseColor("#259900"));
+                textView.setBackgroundColor(Color.parseColor("#ffffff"));
+                textView.setTextSize(20);
+                textView.setLayoutParams(params);
+
                 l.addView(textView);
 
             }

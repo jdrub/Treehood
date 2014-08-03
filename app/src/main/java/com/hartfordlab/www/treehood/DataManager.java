@@ -36,8 +36,8 @@ public class DataManager {
         users.add(new User("Knollwood", "Will", "password1", "312 Worthington Road",  0, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Josh", "password2", "7405 Cliffbourne Court",  2, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Jon", "password3", "315 Weatherbee Road",  3, new ArrayList<Challenge>()));
-        users.add(new User("Stoneleigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
-        users.add(new User("Stoneleigh", "Paul", "password5", "401 Stevenson Lane",  1, new ArrayList<Challenge>()));
+        users.add(new User("StoneLeigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
+        users.add(new User("StoneLeigh", "Paul", "password5", "401 Stevenson Lane",  1, new ArrayList<Challenge>()));
         users.add(new User("StoneLeigh", "foo", "foo", "7405 cliffborne ct",  0, new ArrayList<Challenge>()));
         challenges.add(new Challenge("Recycle 100 cans", Challenge.NOT_STARTED, "Recycling helps keep waste out of landfills"));
         challenges.add(new Challenge("Plant one tree", Challenge.NOT_STARTED, "Photosynthetic organisms provide us with some of the oxygen we need to live"));
@@ -45,6 +45,10 @@ public class DataManager {
         challenges.add(new Challenge("Install solar panels", Challenge.NOT_STARTED, "Solar panels are an investment; they cost a lot at first, but save you money over time."));
         challenges.add(new Challenge("Clean up garbage in a nearby stream", Challenge.NOT_STARTED, "Humans can be careless sometimes, and occasionally they need others to pick up after them."));
         challenges.add(new Challenge("Spend time by the bay", Challenge.NOT_STARTED, "It never hurts to be reconnected with nature, no matter how brief."));
+        challenges.add(new Challenge("CHANGE YOUR LIGHT", Challenge.NOT_STARTED, "If every household in the United State replaced one regular lightbulb with one of those new compact fluorescent" +
+                " bulbs, the pollution reduction would be equivalent to removing one million cars from the road.\n" +
+                "\n" +
+                "Don't like the color of light? Use these bulbs for closets, laundry rooms and other places where it won't irk you as much."));
 
         users.get(0).returnChallenges().add(challenges.get(0).clone());
         users.get(0).returnChallenges().add(challenges.get(3).clone());
@@ -56,9 +60,11 @@ public class DataManager {
         users.get(3).returnChallenges().add(challenges.get(4).clone());
         users.get(4).returnChallenges().add(challenges.get(3).clone());
         users.get(4).returnChallenges().add(challenges.get(4).clone());
+        users.get(5).returnChallenges().add(challenges.get(3).clone());
+        users.get(5).returnChallenges().add(challenges.get(4).clone());
 
         Tree knollwood = new Tree("Knollwood");
-        Tree stoneleigh = new Tree("Knollwood");
+        Tree stoneleigh = new Tree("StoneLeigh");
         for(int i = 0; i < 3; i ++){
             knollwood.addUsers(users.get(i).clone());
         }

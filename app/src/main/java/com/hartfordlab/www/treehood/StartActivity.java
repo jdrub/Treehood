@@ -171,7 +171,7 @@ import java.util.ArrayList;
 
             user = (User)getArguments().getSerializable("USER");
 
-            View myInflatedView = inflater.inflate(R.layout.user_info_layout, container, false);
+            View myInflatedView = inflater.inflate(R.layout.bfragment, container, false);
             //Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
 
             ((TextView)myInflatedView.findViewById(R.id.name)).setText(user.getName());

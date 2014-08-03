@@ -2,20 +2,37 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
+    android:layout_height="fill_parent"
+    android:background="#e8e8e8">
 
     <TextView
         android:layout_width="wrap_content"
+        android:textColor="#259900"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25dp"
         android:text="challenge title"
         android:id="@+id/title"
-        android:fontFamily="fonts/Roboto-Black.ttf"
+        android:fontFamily="fonts/Roboto-Bold.ttf"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:width="250dp"
+        android:gravity="center_horizontal"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tree_logo_alpha"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/image"
+        />
 
     <ScrollView
+        android:layout_below="@id/image"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
@@ -23,17 +40,27 @@
         android:layout_centerHorizontal="true" >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:fontFamily="fonts/Roboto-Bold.ttf"
+            android:textColor="#259900"
+            android:gravity="center_horizontal"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="challenge description"
-            android:id="@+id/description" />
+            android:id="@+id/description"
+            android:textSize="18dp"
+            />
     </ScrollView>
 
     <Button
+        android:fontFamily="fonts/Roboto-Bold.ttf"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accept Challenge"
+        android:textColor="#e8e8e8"
         android:id="@+id/accept_button"
+        android:background="@drawable/custom_bg"
         android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp" />

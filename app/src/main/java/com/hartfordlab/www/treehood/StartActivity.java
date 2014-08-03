@@ -167,7 +167,23 @@ import java.util.ArrayList;
 
             user = (User)getArguments().getSerializable("USER");
 
-            return inflater.inflate(R.layout.bfragment, container, false);
+            View myInflatedView = inflater.inflate(R.layout.user_info_layout, container, false);
+            //Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+
+            ((TextView)myInflatedView.findViewById(R.id.name)).setText(user.getName());
+            ((TextView)myInflatedView.findViewById(R.id.scorein)).setText((new Integer(user.getScore())).toString());
+
+            ((TextView)myInflatedView.findViewById(R.id.treename)).setText(user.getTreeName());
+
+            for(Challenge c: user.getChallenges()){
+                LinearLayout l = (LinearLayout)myInflatedView.findViewById(R.id.challenges);
+                TextView textView = new TextView(container.getContext());
+                textView.setText(c.getName());
+                //TODO: add margins/padding
+                l.addView(textView);
+            }
+
+            return myInflatedView;
         }
 
     }

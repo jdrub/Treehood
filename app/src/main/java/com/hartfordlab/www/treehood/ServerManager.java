@@ -12,15 +12,15 @@ public class ServerManager {
     }
 
     public User login(String username,String password,DataManager dataManager){
-        return dataManager.getUsers().get(0);
-    /*    ArrayList<User> users = dataManager.getUsers();
+
+        ArrayList<User> users = dataManager.getUsers();
         for(User u: users){
             if(u.getName().equals(username) && u.comparePassword(password)){
                 return u;
             }
         }
 
-        return null;*/
+        return null;
     }
 
 

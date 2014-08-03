@@ -9,7 +9,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,11 +26,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
-/**
- * Created by will on 8/2/14.
- */
-    public class StartActivity extends Activity {
+
+public class StartActivity extends Activity {
         public static Context appContext;
         User user;
 
@@ -52,13 +55,13 @@ import java.util.Collections;
 
 
             TextView t = (TextView) findViewById(R.id.standard_tabs);
-            t.setTextSize(20);
+            t.setTextSize(21);
             t.setLayoutParams(params);
 
             TextView t2 = (TextView) findViewById(R.id.standard_tabs2);
-            t2.setTextSize(30);
+            t2.setTextSize(21);
             TextView t3 = (TextView) findViewById(R.id.standard_tabs3);
-            t3.setTextSize(20);
+            t3.setTextSize(21);
             t3.setLayoutParams(params);
 
 
@@ -124,13 +127,38 @@ import java.util.Collections;
             TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
             params.setMargins(22, 0, 22, 25); //left,top,right,bottom
 
+            Random randomGenerator = new Random();
 
 
             for(int j = 0; j < 2; j++) {
                 for (int i = 0; i < challenges.size(); i++) {
                     LinearLayout layout = (LinearLayout) myInflatedView.findViewById(R.id.linear_layout);
                     final Button textView = new Button(container.getContext());
-                    textView.setText(challenges.get(i).getName());
+
+//                    SpannableString ss = new SpannableString(challenges.get(i).getName());
+//
+//
+//                    ImageSpan is;
+//                    int randomInt = randomGenerator.nextInt(6);
+//                    switch(randomInt){
+//                        case 1: is = new ImageSpan(container.getContext(), R.drawable.glyphicons_001_leaf);
+//                            break;
+//                        case 2: is = new ImageSpan(container.getContext(), R.drawable.glyphicons_064_lightbulb);
+//                            break;
+//                        case 3: is = new ImageSpan(container.getContext(), R.drawable.glyphicons_231_sun);
+//                            break;
+//                        case 4: is = new ImageSpan(container.getContext(), R.drawable.glyphicons_254_fishes);
+//                            break;
+//                        case 5: is = new ImageSpan(container.getContext(), R.drawable.glyphicons_261_buoy);
+//                            break;
+//                        default: is = new ImageSpan(container.getContext(),R.drawable.glyphicons_317_tree_deciduous);
+//                    }
+//
+
+//                    SpannableString text = new SpannableString("12  " + challenges.get(i).getName());
+//                    text.setSpan(is, 0, 2, 0);
+                    String text = challenges.get(i).getName();
+                    textView.setText(text);
                     textView.setGravity(Gravity.CENTER_HORIZONTAL);
                     textView.setGravity(Gravity.CENTER_VERTICAL);
                     textView.setWidth(500);

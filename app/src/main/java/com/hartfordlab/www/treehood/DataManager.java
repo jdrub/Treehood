@@ -33,13 +33,19 @@ public class DataManager {
     //populates ArrayLists with new hardcoded data
     public void generateData(){
 
-        users.add(new User("Knollwood", "Will", "password1", "312 Worthington Road",  0, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Will", "password1", "312 Worthington Road",  23, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Chesapeake", "bae", "647 Contees Wharf Rd", 215, new ArrayList<Challenge>()));
-        users.add(new User("Knollwood", "Josh", "password2", "7405 Cliffbourne Court",  2, new ArrayList<Challenge>()));
-        users.add(new User("Knollwood", "Jon", "password3", "315 Weatherbee Road",  3, new ArrayList<Challenge>()));
-        users.add(new User("StoneLeigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
-        users.add(new User("StoneLeigh", "Paul", "password5", "401 Stevenson Lane",  1, new ArrayList<Challenge>()));
-        users.add(new User("StoneLeigh", "foo", "foo", "7405 cliffborne ct",  0, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Josh", "password2", "7405 Cliffbourne Court",  24, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Jameson", "password3", "315 Weatherbee Road",  3, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Franklin", "password4", "316 Murdock Road",  9, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Arietta", "password5", "401 Stevenson Lane",  34, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Joaquin", "pass", "7405 cliffborne ct",  41, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Beyonce", "", "7405 cliffborne ct",  19, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Testudo", "", "7405 cliffborne ct",  63, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Brick Tamland", "", "7405 cliffborne ct",  0, new ArrayList<Challenge>()));
+
+
+
         challenges.add(new Challenge("FLY WITH AN E-TICKET", Challenge.NOT_STARTED, "The cost of processing a paper ticket is approximately $10, while processing " +
                 "an e-ticket costs only $1. In the near future, e-tickets will be the only option, saving the airline industry $3 billion a year. In addition to financial " +
                 "savings, the sheer amount of paper eliminated by this process is commendable."));
@@ -86,15 +92,16 @@ public class DataManager {
         users.get(5).returnChallenges().add(challenges.get(4).clone());
 
         Tree knollwood = new Tree("Knollwood");
-        Tree stoneleigh = new Tree("StoneLeigh");
-        for(int i = 0; i < 3; i ++){
+//        Tree stoneleigh = new Tree("StoneLeigh");
+        for(int i = 0; i < users.size(); i ++){
             knollwood.addUsers(users.get(i).clone());
+
         }
-        stoneleigh.addUsers(users.get(3).clone());
-        stoneleigh.addUsers(users.get(4).clone());
+//        stoneleigh.addUsers(users.get(3).clone());
+//        stoneleigh.addUsers(users.get(4).clone());
 
 
-        trees.add(stoneleigh);
+//        trees.add(stoneleigh);
         trees.add(knollwood);
 
     }

@@ -66,6 +66,12 @@ public class User implements Serializable {
         score += toAdd;
     }
 
+    public boolean comparePassword(String passwordIn){
+        if(passwordIn.equals(this.password))
+            return true;
+        return false;
+    }
+
     public ArrayList<Challenge> returnChallenges(){
         return challenges;
     }

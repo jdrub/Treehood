@@ -32,11 +32,13 @@ public class DataManager {
 
     //populates ArrayLists with new hardcoded data
     public void generateData(){
+
         users.add(new User("Knollwood", "Will", "password1", "312 Worthington Road",  0, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Josh", "password2", "7405 Cliffbourne Court",  2, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Jon", "password3", "315 Weatherbee Road",  3, new ArrayList<Challenge>()));
         users.add(new User("Stoneleigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
         users.add(new User("Stoneleigh", "Paul", "password5", "401 Stevenson Lane",  1, new ArrayList<Challenge>()));
+        users.add(new User("StoneLeigh", "foo", "foo", "7405 cliffborne ct",  0, new ArrayList<Challenge>()));
         challenges.add(new Challenge("Recycle 100 cans", Challenge.NOT_STARTED, "Recycling helps keep waste out of landfills"));
         challenges.add(new Challenge("Plant one tree", Challenge.NOT_STARTED, "Photosynthetic organisms provide us with some of the oxygen we need to live"));
         challenges.add(new Challenge("Get a rebate on new green appliances", Challenge.NOT_STARTED, "Using less water reduces your carbon footprint."));

@@ -14,10 +14,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
     ServerManager serverManager;
+    DataManager dataManager;
     TextView title;
     EditText user;
     EditText pass;
@@ -31,6 +33,8 @@ public class MainActivity extends Activity {
         pass = (EditText) findViewById(R.id.password);
         button = (Button) findViewById(R.id.button);
 
+        dataManager = new DataManager();
+        dataManager.generateData();
         serverManager = new ServerManager();
         Typeface fontMusket = Typeface.createFromAsset(getAssets(), "fonts/Musket bold.ttf");
         Typeface fontRobo = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");
@@ -82,8 +86,13 @@ public class MainActivity extends Activity {
         String password = ((EditText)findViewById(R.id.password)).getText().toString();
 
 
-        User user = serverManager.login(username,password);
+        User user = serverManager.login(username,password,dataManager);
 
+        if(user == null){
+            Toast.makeText(getApplicationContext(),
+                    "user/pass info doesn't exist", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         intent.putExtra("USER",user);
         startActivity(intent);

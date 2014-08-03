@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:id="@+id/standard_tabs"
-        android:fontFamily="fonts/Roboto-Bold.ttf"
-        android:textSize="30dp"
+        android:fontFamily="fonts/Roboto-Black.ttf"
+        android:textSize="22dp"
         android:textColor="#259900"
         android:tabStripEnabled="false"
         />
@@ -27,8 +27,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:id="@+id/standard_tabs2"
-        android:fontFamily="fonts/Roboto-Bold.ttf"
-        android:textSize="30dp"
+        android:fontFamily="fonts/Roboto-Black.ttf"
+        android:textSize="22dp"
         android:textColor="#259900"
         />
 
@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical|center_horizontal"
         android:id="@+id/standard_tabs3"
-        android:fontFamily="fonts/Roboto-Bold.ttf"
-        android:textSize="30dp"
+        android:fontFamily="fonts/Roboto-Black.ttf"
+        android:textSize="22dp"
         android:textColor="#259900"
         />
 

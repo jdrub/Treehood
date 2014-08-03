@@ -34,6 +34,7 @@ public class DataManager {
     public void generateData(){
 
         users.add(new User("Knollwood", "Will", "password1", "312 Worthington Road",  0, new ArrayList<Challenge>()));
+        users.add(new User("Knollwood", "Chesapeake", "bae", "647 Contees Wharf Rd", 215, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Josh", "password2", "7405 Cliffbourne Court",  2, new ArrayList<Challenge>()));
         users.add(new User("Knollwood", "Jon", "password3", "315 Weatherbee Road",  3, new ArrayList<Challenge>()));
         users.add(new User("StoneLeigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
@@ -58,6 +59,18 @@ public class DataManager {
                 " bulbs, the pollution reduction would be equivalent to removing one million cars from the road.\n" +
                 "\n" +
                 "Don't like the color of light? Use these bulbs for closets, laundry rooms and other places where it won't irk you as much."));
+        challenges.add(new Challenge("PLANT A TREE", Challenge.NOT_STARTED, "It's good for the air, the land, can shade your house and save on cooling (plant on the west side of your home), and they can " +
+                "also improve the value of your property.\n" +
+                "\n" +
+                "Make it meaningful for the whole family and plant a tree every year for each member."));
+
+        challenges.add(new Challenge("BAN BATHTIME!", Challenge.NOT_STARTED, "Have a no-bath week, and take showers instead. Baths require almost twice as much water. Not only will you reduce water " +
+                "consumption, but the energy costs associated with heating the water."));
+
+        challenges.add(new Challenge("GO VEGETARIAN ONCE A WEEK", Challenge.NOT_STARTED, "One less meat-based meal a week helps the planet and your diet. For example: It requires 2,500 gallons " +
+                "of water to produce one pound of beef. You will also also save some trees. For each hamburger that originated from animals raised on rainforest land, approximately 55 square feet of forest have been destroyed."));
+
+//        challenges.add(new Challenge("", Challenge.NOT_STARTED, ""));
 
         users.get(0).returnChallenges().add(challenges.get(0).clone());
         users.get(0).returnChallenges().add(challenges.get(3).clone());

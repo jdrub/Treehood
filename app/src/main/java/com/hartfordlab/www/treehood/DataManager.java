@@ -39,12 +39,21 @@ public class DataManager {
         users.add(new User("StoneLeigh", "Jeff", "password4", "316 Murdock Road",  0, new ArrayList<Challenge>()));
         users.add(new User("StoneLeigh", "Paul", "password5", "401 Stevenson Lane",  1, new ArrayList<Challenge>()));
         users.add(new User("StoneLeigh", "foo", "foo", "7405 cliffborne ct",  0, new ArrayList<Challenge>()));
-        challenges.add(new Challenge("Recycle 100 cans", Challenge.NOT_STARTED, "Recycling helps keep waste out of landfills"));
-        challenges.add(new Challenge("Plant one tree", Challenge.NOT_STARTED, "Photosynthetic organisms provide us with some of the oxygen we need to live"));
-        challenges.add(new Challenge("Get a rebate on new green appliances", Challenge.NOT_STARTED, "Using less water reduces your carbon footprint."));
-        challenges.add(new Challenge("Install solar panels", Challenge.NOT_STARTED, "Solar panels are an investment; they cost a lot at first, but save you money over time."));
-        challenges.add(new Challenge("Clean up garbage in a nearby stream", Challenge.NOT_STARTED, "Humans can be careless sometimes, and occasionally they need others to pick up after them."));
-        challenges.add(new Challenge("Spend time by the bay", Challenge.NOT_STARTED, "It never hurts to be reconnected with nature, no matter how brief."));
+        challenges.add(new Challenge("FLY WITH AN E-TICKET", Challenge.NOT_STARTED, "The cost of processing a paper ticket is approximately $10, while processing " +
+                "an e-ticket costs only $1. In the near future, e-tickets will be the only option, saving the airline industry $3 billion a year. In addition to financial " +
+                "savings, the sheer amount of paper eliminated by this process is commendable."));
+        challenges.add(new Challenge("GREENER LAWN CARE", Challenge.NOT_STARTED, "If you must water your lawn, do it early in the morning before any moisture is lost to evaporation. " +
+                "Have a few weeds? Spot treat them with vinegar. Not sure if you should rake? Normal " +
+                "clippings act as a natural fertilizer, let them be. If you've waited too long, rake by hand — it's excellent exercise."));
+        challenges.add(new Challenge("TELECOMMUTE", Challenge.NOT_STARTED, "See if you can work out an arrangement with your employer that you work from home for some portion of the week." +
+                " Not only will you save money and gasoline, and you get to work in your pajamas!"));
+        challenges.add(new Challenge("GIVE IT AWAY", Challenge.NOT_STARTED, "Before you throw something away, think about if someone else might need it. Either donate to a charitable organization or " +
+                "post it on a web site designed to connect people and things, such as Freecycle.org."));
+        challenges.add(new Challenge("GO TO A CAR WASH", Challenge.NOT_STARTED, "Professional car washes are often more efficient with water consumption. If everyone in the U.S. who washes their" +
+                " car themselves took just one visit to the car wash we could save nearly 8.7 billion gallons of water."));
+        challenges.add(new Challenge("USE RECHARGABLE BATTERIES", Challenge.NOT_STARTED, "Each year 15 billion batteries produced and sold and most of them are disposable alkaline batteries. " +
+                "Only a fraction of those are recycled. Buy a charger and a few sets of rechargeable batteries. Although it requires an upfront investment, it is one that should pay off in no time. " +
+                "And on Christmas morning when all the stores are closed? You'll be fully stocked."));
         challenges.add(new Challenge("CHANGE YOUR LIGHT", Challenge.NOT_STARTED, "If every household in the United State replaced one regular lightbulb with one of those new compact fluorescent" +
                 " bulbs, the pollution reduction would be equivalent to removing one million cars from the road.\n" +
                 "\n" +

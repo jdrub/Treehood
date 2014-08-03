@@ -25,7 +25,7 @@ public class ChallengeDetailsFragment extends Fragment {
 
         user = (User)b.getSerializable("USER");
 
-        View myInflatedView = inflater.inflate(R.layout.bfragment,container,false);
+        View myInflatedView = inflater.inflate(R.layout.challenge_details_layout,container,false);
         Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
 
         ((TextView)myInflatedView.findViewById(R.id.title)).setText(challenge.getName());

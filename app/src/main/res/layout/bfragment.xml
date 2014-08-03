@@ -15,7 +15,8 @@
         android:layout_marginTop="39dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="390dp"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"
         android:text="myscore"
         android:id="@+id/scorein"
@@ -25,20 +26,22 @@
         android:layout_marginTop="52dp" />
 
     <TextView
+        android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="mytree"
         android:id="@+id/treename"
         android:layout_below="@+id/scorein"
         android:layout_alignRight="@+id/scorein"
+        android:layout_alignLeft="@+id/scorein"
         android:layout_alignEnd="@+id/scorein"
         android:layout_marginTop="44dp" />
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scorein"
-        android:layout_alignRight="@+id/scorein"
-        android:layout_alignEnd="@+id/scorein"
+        android:layout_below="@+id/treename"
+        android:layout_alignRight="@+id/treename"
+        android:layout_alignLeft="@+id/treename"
         android:layout_marginTop="44dp" >
 
         <LinearLayout

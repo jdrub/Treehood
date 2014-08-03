@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="#E8E8E8"
-    android:layout_gravity="center">
-    <ScrollView
-        android:layout_width="fill_parent"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foregroundGravity="center_horizontal|center_vertical">
-        <LinearLayout
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_width="360dp"
+        android:text="Challenges"
+        android:id="@+id/challenges_title"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/tree_logo_alpha"/>
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8E8E8"
+        android:layout_gravity="center"
+        android:layout_below="@id/challenges_title">
+        <ScrollView
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linear_layout"
-            android:orientation="vertical">
+            android:foregroundGravity="center_horizontal|center_vertical">
+            <LinearLayout
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_layout"
+                android:orientation="vertical">
 
 
-            </LinearLayout>
+                </LinearLayout>
 
-    </ScrollView>
-</LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</RelativeLayout>

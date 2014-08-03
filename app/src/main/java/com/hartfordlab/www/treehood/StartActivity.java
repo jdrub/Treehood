@@ -73,9 +73,9 @@ import java.util.Collections;
             ActionBar.Tab ThirdTab = actionbar.newTab()
                     .setCustomView(t3);
 
-            actionbar.setStackedBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.white)));
             actionbar.setStackedBackgroundDrawable(getResources().getDrawable(
                     R.drawable.tab_bg));
+
 
 
 
@@ -190,19 +190,30 @@ import java.util.Collections;
             TextView t = ((TextView)myInflatedView.findViewById(R.id.name));
             t.setTypeface(roboto);
             t.setText(user.getName());
-
+            t.setTextSize(30);
+            t.setGravity(Gravity.CENTER_HORIZONTAL);
 
             TextView t2 = ((TextView)myInflatedView.findViewById(R.id.scorein));
             t2.setTypeface(roboto);
             t2.setText((new Integer(user.getScore())).toString());
+            t2.setGravity(Gravity.CENTER_HORIZONTAL);
+
 
             TextView t3 = ((TextView)myInflatedView.findViewById(R.id.treename));
             t3.setTypeface(roboto);
             t3.setText(user.getTreeName());
+            t3.setGravity(Gravity.CENTER_HORIZONTAL);
+
+            TextView todo = ((TextView)myInflatedView.findViewById(R.id.treename));
+            todo.setTypeface(roboto);
+            todo.setTextSize(30);
+            todo.setText("TODO:");
+            todo.setGravity(Gravity.CENTER_HORIZONTAL);
 
             for(Challenge c: user.getChallenges()){
                 LinearLayout l = (LinearLayout)myInflatedView.findViewById(R.id.challenges);
                 TextView textView = new TextView(container.getContext());
+                textView.setGravity(Gravity.CENTER_HORIZONTAL);
                 textView.setText(c.getName());
                 textView.setTypeface(roboto);
                 textView.setTextSize(15);

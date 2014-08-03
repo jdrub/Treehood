@@ -18,7 +18,7 @@
         android:id="@+id/standard_tabs"
         android:fontFamily="fonts/Roboto-Bold.ttf"
         android:textSize="30dp"
-        android:textColor="#E8E8E8"
+        android:textColor="#259900"
         android:tabStripEnabled="false"
         />
 
@@ -29,7 +29,7 @@
         android:id="@+id/standard_tabs2"
         android:fontFamily="fonts/Roboto-Bold.ttf"
         android:textSize="30dp"
-        android:textColor="#E8E8E8"
+        android:textColor="#259900"
         />
 
     <TextView
@@ -39,7 +39,7 @@
         android:id="@+id/standard_tabs3"
         android:fontFamily="fonts/Roboto-Bold.ttf"
         android:textSize="30dp"
-        android:textColor="#E8E8E8"
+        android:textColor="#259900"
         />
 
 

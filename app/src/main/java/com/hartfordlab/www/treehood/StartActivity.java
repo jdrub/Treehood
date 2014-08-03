@@ -4,9 +4,11 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.TabActivity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,10 +38,28 @@ import java.util.ArrayList;
             ActionBar actionbar = getActionBar();
 //Tell the ActionBar we want to use Tabs.
             actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+            actionbar.setDisplayShowHomeEnabled(false);
+            actionbar.setDisplayShowTitleEnabled(false);
 //initiating both tabs and set text to it.
-            ActionBar.Tab PlayerTab = actionbar.newTab().setText("Fragment A");
-            ActionBar.Tab StationsTab = actionbar.newTab().setText("Fragment B");
-            ActionBar.Tab ThirdTab = actionbar.newTab().setText("Fragment C");
+
+            TextView t = (TextView) findViewById(R.id.standard_tabs);
+            TextView t2 = (TextView) findViewById(R.id.standard_tabs2);
+            TextView t3 = (TextView) findViewById(R.id.standard_tabs3);
+            t.setText("Testing");
+            t2.setText("Testing2");
+            t3.setText("Testing3");
+
+            ActionBar.Tab PlayerTab = actionbar.newTab()
+                    .setCustomView(t);
+            ActionBar.Tab StationsTab = actionbar.newTab()
+                    .setCustomView(t2);
+            ActionBar.Tab ThirdTab = actionbar.newTab()
+                    .setCustomView(t3);
+
+            actionbar.setStackedBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.white)));
+            actionbar.setStackedBackgroundDrawable(getResources().getDrawable(
+                    R.drawable.tab_bg));
+
 
 //create the two fragments we want to use for display content
             Fragment PlayerFragment = new AFragment();
@@ -79,7 +100,8 @@ import java.util.ArrayList;
                     LinearLayout layout = (LinearLayout) myInflatedView.findViewById(R.id.linear_layout);
                     final Button textView = new Button(container.getContext());
                     textView.setText(challenges.get(i).getName());
-                    textView.setGravity(Gravity.CENTER);
+                    textView.setGravity(Gravity.CENTER_HORIZONTAL);
+                    textView.setGravity(Gravity.CENTER_VERTICAL);
                     textView.setTextColor(Color.parseColor("#259900"));
                     textView.setBackgroundColor(Color.parseColor("#ffffff"));
                     textView.setTypeface(roboto);

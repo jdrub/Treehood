@@ -5,11 +5,19 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by will on 8/2/14.
@@ -37,6 +45,8 @@ import android.widget.Toast;
             Fragment StationsFragment = new BFragment();
             Fragment ThirdFragment = new CFragment();
 
+
+
 //set the Tab listener. Now we can listen for clicks.
             PlayerTab.setTabListener(new MyTabsListener(PlayerFragment));
             StationsTab.setTabListener(new MyTabsListener(StationsFragment));
@@ -48,13 +58,46 @@ import android.widget.Toast;
             actionbar.addTab(ThirdTab);
         }
 
+
+
+
     public static class AFragment extends Fragment {
+        DataManager dataManager;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.afragment, container, false);
+            dataManager = new DataManager();
+            dataManager.generateData();
+
+            View myInflatedView = inflater.inflate(R.layout.afragment,container,false);
+
+            ArrayList<Challenge> challenges = dataManager.getChallenges();
+            Typeface roboto = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
+
+            TableRow.LayoutParams params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
+            params.setMargins(22, 15, 22, 15); //left,top,right,bottom
+
+            for(int j = 0; j < 2; j++) {
+                for (int i = 0; i < challenges.size(); i++) {
+                    LinearLayout layout = (LinearLayout) myInflatedView.findViewById(R.id.linear_layout);
+                    TextView textView = new TextView(container.getContext());
+                    textView.setText(challenges.get(i).getName());
+                    textView.setGravity(Gravity.CENTER);
+                    textView.setTextColor(Color.parseColor("#259900"));
+                    textView.setBackgroundColor(Color.parseColor("#ffffff"));
+                    textView.setTypeface(roboto);
+                    textView.setTextSize(24);
+                    //textView.setBackgroundResource(R.drawable.custom_bg);
+                    textView.setLayoutParams(params);
+                    layout.addView(textView);
+                }
+            }
+
+            return myInflatedView;
         }
+
+
 
     }
 

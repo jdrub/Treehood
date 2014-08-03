@@ -60,8 +60,8 @@ public class DataManager {
         for(int i = 0; i < 3; i ++){
             knollwood.addUsers(users.get(i).clone());
         }
+        stoneleigh.addUsers(users.get(3).clone());
         stoneleigh.addUsers(users.get(4).clone());
-        stoneleigh.addUsers(users.get(5).clone());
 
 
         trees.add(stoneleigh);
